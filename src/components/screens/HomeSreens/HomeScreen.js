@@ -1,9 +1,11 @@
 import React from 'react'
 import { StyleSheet, Text, View , ImageBackground, Pressable, TextInput } from 'react-native'
 import {styles} from './styles';
-import Feather from 'react-native-vector-icons/Feather'
+import Feather from 'react-native-vector-icons/Feather';
 
-export default function HomeScreen() {
+
+export default function HomeScreen({navigation}) {
+
   return (
     <View>
        <ImageBackground
@@ -13,7 +15,7 @@ export default function HomeScreen() {
        >
 
         {/* {search button} */}
-        <Pressable  style={styles.searchButton}>
+        <Pressable  style={styles.searchButton} onPress={() => navigation.navigate("searchExplore")}>
            <Feather name="search" size={20} color="#f54327" />
            <Text style={styles.searchButtonTitle}>Where are you going ?</Text>
         </Pressable>
